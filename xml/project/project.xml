@@ -17,6 +17,9 @@
       <menuitem><a href="eclipse/index.html">Eclipse plugin</a></menuitem>
       <menuitem><a href="http://download.forge.objectweb.org/asm/asm4-guide.pdf">User Guide</a></menuitem>
       <menuitem><a href="http://mail.ow2.org/wws/info/asm">Mailing Lists</a></menuitem>
+      <menuitem><a href="http://gitlab.ow2.org/asm/asm">Git Repository</a></menuitem>
+      <menuitem><a href="http://gitlab.ow2.org/asm/asm/issues">Issue Tracker</a></menuitem>
+      <menuitem><a href="doc/developer-guide.html">Developer Guide</a></menuitem>
       <menuitem><a href="license.html">License</a></menuitem>
       <menuitem><a href="history.html">History</a></menuitem>
     </menu>
@@ -26,16 +29,10 @@
       <menuitem><a href="asmdex-index.html">Home</a></menuitem>
       <menuitem><a href="download/asmdex-index.html">Download</a></menuitem>
       <menuitem><a href="http://mail.ow2.org/wws/info/asm">Mailing Lists</a></menuitem>
+      <menuitem><a href="http://gitlab.ow2.org/asm/asmdex">Git Repository</a></menuitem>
+      <menuitem><a href="http://gitlab.ow2.org/asm/asmdex/issues">Issue Tracker</a></menuitem>
       <menuitem><a href="asmdex-license.html">License</a></menuitem>
       <menuitem><a href="asmdex-history.html">History</a></menuitem>
-    </menu>
-
-    <menu>
-      <legend>Developers' Corner</legend>
-      <menuitem><a href="http://forge.objectweb.org/projects/asm/">ObjectWeb Forge Site</a></menuitem>
-      <menuitem><a href="http://forge.objectweb.org/plugins/scmsvn/index.php?group_id=23">SVN Repository</a></menuitem>
-      <menuitem><a href="http://forge.objectweb.org/tracker/?group_id=23">Issue Tracker</a></menuitem>
-      <menuitem><a href="doc/developer-guide.html">Developer Guide</a></menuitem>
     </menu>
 
     <menu>

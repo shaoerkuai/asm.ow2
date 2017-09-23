@@ -14,8 +14,53 @@
 
     <s1 name="History">
 
+     <subtitle>23 September 2017: ASM 6.0 (git-tag: ASM_6_0)</subtitle>
+
+        <p>Diffs from 5.2:</p>
+        <ul>
+            <li>Codebase migrated to gitlab (feature requests 317617, 317619, 317542)</li>
+            <li>Support for modules (JSR 376, feature request 317628)</li>
+            <li>Support for JDK specific module attributes (ModuleTarget, ModuleHashes and ModuleResolution).</li>
+            <li>ASM jars now contain debug info, asm-all jar removed (feature request 317622)</li>
+            <li>Support for removable features deleted (cf SIGNATURES, ANNOTATIONS, etc constants in ClassReader)</li>
+            <li>bug fixes
+            <ul>
+                 <li>317793: AnalyzerAdapter calculates wrong type for AALOAD in case of null</li>
+                 <li>317784: NegativeArraySizeException when resizing jump instruction in a class without frames</li>
+                 <li>317780: IllegalArgumentException at CheckMethodAdapter.checkInternalName for non-Java-identifier name</li>
+                 <li>317785: NullPointerException in MethodRemapper with 'chop' stack map frames and tree API</li>
+                 <li>317786: VerifyError when added code pushes the offset of a conditional backward jump below -32768</li>
+                 <li>317791: Invalid class files generated for large methods (regression introduced in 5.2)</li>
+                 <li>317792: Fix the handling of inner classes with EXPAND_ASM_INSNS</li>
+                 <li>Bug fix related to stack map frames</li>
+             </ul>
+            </li>
+        </ul>
+
+     <subtitle>16 July 2017: ASM 6.0 beta (git-tag: ASM_6_0_BETA)</subtitle>
+
+        <p>Diffs from 6.0 alpha:</p>
+        <ul>
+            <li>Codebase migrated to gitlab (feature requests 317617, 317619, 317542)</li>
+            <li>Support for modules updated to the latest version of JSR 376</li>
+            <li>Support for JDK specific module attributes (ModuleTarget, ModuleHashes and ModuleResolution).</li> 
+            <li>bug fixes
+            <ul>
+                 <li>317749: ClassCheckAdapter should discover invocation of default method from pre-Java 8 class file</li>
+                 <li>317626: AnnotationNode incorrectly process array values in 'visit(final String name, final Object value)' method</li>
+                 <li>317630: Frames are re-calculated for Large Methods</li>
+                 <li>317748: Class after instrumenting loses first BootstrapMethods entry</li>
+                 <li>317784: NegativeArraySizeException when resizing jump instruction in a class without frames</li>
+                 <li>317780: IllegalArgumentException at CheckMethodAdapter.checkInternalName for non-Java-identifier name</li>
+                 <li>317785: NullPointerException in MethodRemapper with 'chop' stack map frames and tree API</li>
+                 <li>317786: VerifyError when added code pushes the offset of a conditional backward jump below -32768</li>
+             </ul>
+            </li>
+        </ul>
+
      <subtitle>23 December 2016: ASM 5.2 (svn-tag: ASM_5_2)</subtitle>
 
+        <p>Diffs from 5.1:</p>
         <ul>
             <li>Better comments in Opcodes.java</li>
             <li>SuppressWarnings in Opcodes.java for Integer constructor deprecation.</li>
@@ -28,6 +73,19 @@
                  <li>317626: AnnotationNode incorrectly process array values in 'visit(final String name, final Object value)' method</li>
                  <li>317630: Frames are re-calculated for Large Methods</li>
                  <li>317748: Class after instrumenting loses first BootstrapMethods entry</li>
+             </ul>
+            </li>
+        </ul>
+
+     <subtitle>19 June 2016: ASM 6.0 alpha (svn-tag: ASM_6_0_ALPHA)</subtitle>
+
+        <p>Diffs from 5.1:</p>
+        <ul>
+            <li>Preliminary support for modules</li>
+            <li>bug fixes
+            <ul>
+                 <li>317616: Misleading comment in ClassWriter</li>
+                 <li>317621: Type.getReturnType(desc) returns wrong for types with parenthesis in name</li>
              </ul>
             </li>
         </ul>
