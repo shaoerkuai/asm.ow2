@@ -14,6 +14,41 @@
 
     <s1 name="History">
 
+     <subtitle>11 March 2018: ASM 6.1 (git-tag: ASM_6_1)</subtitle>
+
+        <p>Diffs from 6.0:</p>
+        <ul>
+            <li>new V10 constant for Java 10 class files</li>
+            <li>xml package deprecated</li>
+            <li>project layout changed to Maven style</li>
+            <li>build system changed from Ant to Gradle</li>
+            <li>coding style changed to Google Java style</li>
+            <li>code quality and readability improved a lot</li>
+            <li>code quality <a href="http://sonarqube.ow2.org/projects">tracked with SonarQube</a></li>
+            <li>performance improvements</li>
+            <li>unit tests improved: migrated to JUnit 5, faster, coverage > 95%</li>
+            <li>non-regression tests added for past issues</li>
+            <li>benchmarks improved: now use <a href="http://openjdk.java.net/projects/code-tools/jmh">JMH</a></li>
+            <li>new Gitlab Continuous Integration pipeline</li>
+            <li>bug fixes:
+            <ul>
+                <li>317800: Resizing jump instruction adds invalid stack frame to a class without frames</li>
+                <li>317802: MethodRemapper.visitInvokeDynamicInsn mutates source bsmArgs</li>
+                <li>317804: Adjust CheckModuleAdapter so Module attribute in 54.0+ class file cannot contains a requires java.base with ACC_TRANSITIVE or ACC_STATIC_PHASE</li>
+                <li>317807: Asymmetry of ClassWriter for bytecode versions higher than the one that ClassReader accepts</li>
+                <li>317809: CheckMethodAdapter rejects valid Java and JVM identifiers with surrogate characters</li>
+                <li>small bug fixes related to modules (<a href="https://gitlab.ow2.org/asm/asm/merge_requests/20/">https://gitlab.ow2.org/asm/asm/merge_requests/20/</a>, <a href="https://gitlab.ow2.org/asm/asm/merge_requests/19/">https://gitlab.ow2.org/asm/asm/merge_requests/19/</a>)</li>
+            </ul>
+            </li>
+            <li>backward binary compatibility is preserved, but the behavior at runtime has changed in a few areas:
+            <ul>
+                <li>ACC_SYNTHETIC flag vs Synthetic attribute, see <a href="https://gitlab.ow2.org/asm/asm/merge_requests/17">https://gitlab.ow2.org/asm/asm/merge_requests/17</a></li>
+                <li>numbering of synthetic parameters: see <a href="https://gitlab.ow2.org/asm/asm/merge_requests/56">https://gitlab.ow2.org/asm/asm/merge_requests/56</a></li>
+                <li>StringBuffer no longer used in util (Printer.buf deprecated, use stringBuilder instead)</li>
+            </ul>
+            </li>
+        </ul>
+
      <subtitle>23 September 2017: ASM 6.0 (git-tag: ASM_6_0)</subtitle>
 
         <p>Diffs from 5.2:</p>
@@ -33,7 +68,7 @@
                  <li>317791: Invalid class files generated for large methods (regression introduced in 5.2)</li>
                  <li>317792: Fix the handling of inner classes with EXPAND_ASM_INSNS</li>
                  <li>Bug fix related to stack map frames</li>
-             </ul>
+            </ul>
             </li>
         </ul>
 
