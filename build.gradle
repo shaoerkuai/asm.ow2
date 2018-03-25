@@ -1,10 +1,26 @@
 description = 'Website of the ASM project'
 
-task build(type: Copy) {
-  from 'src/main/html'
+task javadoc(type: Javadoc) {
+  ['asm', 'asm-analysis', 'asm-commons', 'asm-tree', 'asm-util'].each { pkg ->
+    source(fileTree("external/${pkg}/src/main/java").include('**/*.java'))
+  }
+  title = 'ASM 6.1.1'
+  destinationDir = new File('public/javadoc')
+}
+
+task build(type: Copy, dependsOn: 'javadoc') {
+  inputs.files('src/main/html/header.inc')
+  def header = new File('src/main/html/header.inc').text
+  from('src/main/html') {
+    exclude '*.inc'
+    filter({line -> line.replace('<!--header-->', header)})
+  }
+  from 'src/main/images'
+  from 'src/main/objects'
   into 'public'
 }
 
 task clean(type: Delete) {
+  delete 'build'
   delete 'public'
 }

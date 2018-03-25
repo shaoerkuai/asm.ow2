@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>ASM - About</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <!--header-->
+  <div class="page-content">
+    <h1>About</h1>
+    <p>The ASM project was created by Eric Bruneton in 2000, during his PhD at
+    <a href="http://www.inria.fr/">INRIA</a>. At that time it was only a code
+    generator (no ClassReader, no Visitor concept). It was used to generate
+    dynamic stub and proxy classes, before the
+    <code>java.lang.reflect.Proxy</code> class was released in JDK 1.3. These
+    dynamic classes were used to transparently add non functional properties
+    (logging, persistence, replication, etc) to user components.</p>
+    <p>The visitor idea and the ClassReader concepts were added later, in order
+    to be able to transform existing classes. This was needed to insert the non
+    functional code directly in the user classes, instead of in an intermediate
+    proxy (for better performance). These new features were designed and
+    implemented by Eric Bruneton after his PhD, at France Telecom R&amp;D (now
+    Orange Labs), in order to implement the <a href=
+    "http://fractal.ow2.org/">Fractal component model</a>.</p>
+    <p>The ASM project was released in Open Source in 2002, at the same time as
+    the Fractal project. Since then, many external contributions have been done
+    to the project. The most important contributors are now part of the ASM
+    team, namely Eugene Kuleshov (since 2003), Andrei Loskutov (since 2004) and
+    Rémi Forax (since 2008).</p>
+  </div>
+</body>
+</html>
