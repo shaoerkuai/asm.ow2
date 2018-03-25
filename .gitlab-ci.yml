@@ -1,0 +1,22 @@
+image: gradle:4.6-jdk8-alpine
+
+variables:
+  # Set the location of the dependency cache to a local directory, so that it
+  # can be cached between GitLab Continous Integration Jobs.
+  GRADLE_USER_HOME: '.gradle'
+
+cache:
+  paths:
+    # Cache the downloaded dependencies and plugins between builds.
+    - '$GRADLE_USER_HOME'
+
+pages:
+  stage: deploy
+  script:
+    - gradle build
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
+

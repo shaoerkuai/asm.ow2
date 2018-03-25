@@ -1,0 +1,10 @@
+description = 'Website of the ASM project'
+
+task build(type: Copy) {
+  from 'src/main/html'
+  into 'public'
+}
+
+task clean(type: Delete) {
+  delete 'public'
+}
