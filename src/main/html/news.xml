@@ -3,6 +3,11 @@
 <channel>
   <title>ASM Releases</title>
   <item>
+    <title>ASM 6.2 released</title>
+    <link>http://asm.ow2.io/versions.html#6.2</link>
+    <pubDate>24 May 2018 12:00 UT</pubDate>
+  </item>
+  <item>
     <title>ASM 6.1.1 released</title>
     <link>http://asm.ow2.io/versions.html#6.1.1</link>
     <pubDate>26 Mar 2018 12:00 UT</pubDate>

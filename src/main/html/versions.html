@@ -11,6 +11,29 @@
   <div class="page-content">
     <h1>Versions</h1>
     <!-- Update news.xml and index.html when adding a new version! -->
+    <h3 id="6.2">24 May 2018: ASM 6.2 (tag ASM_6_2)</h3>
+    <ul>
+      <li>experimental support for the upcoming JDK 11 features (nest mates and
+      ConstantDynamic)</li>
+      <li>code quality and readability of commons package improved a lot</li>
+      <li>bug fixes
+        <ul>
+          <li>317817: Allow Kotlin back-tick identifiers by
+          CheckMethodAdapter</li>
+          <li>317821: Regression in 6.1: "new Frame" instead of "newFrame" in
+          Analyzer</li>
+          <li>317822: ACC_DEPRECATED flag (or corresponding attribute) is lost
+          if the constant pool is copied</li>
+          <li>317823: Computing maximum stack size does not work correctly with
+          JSR/RET instructions present</li>
+          <li>317824: ACC_SYNTHETIC attribute is lost for &lt; Java 1.5 if the
+          constant pool is copied</li>
+          <li>317825: idem</li>
+          <li>317827: Computing maximum stack size does not work correctly with
+          dead code present</li>
+        </ul>
+      </li>
+    </ul>
     <h3 id="6.1.1">26 March 2018: ASM 6.1.1 (tag ASM_6_1_1)</h3>
     <ul>
       <li>bug fixes
