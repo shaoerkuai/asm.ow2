@@ -11,6 +11,33 @@
   <div class="page-content">
     <h1>Versions</h1>
     <!-- Update news.xml and index.html when adding a new version! -->
+    <h3 id="6.2.1">5 August 2018: ASM 6.2.1 (tag ASM_6_2_1)</h3>
+    <ul>
+      <li>small improvements
+        <ul>
+          <li>!177: Ensure instructions belong only to one list</li>
+          <li>!178: Allow setting stack values in analysis frames</li>
+          <li>!179: Multiple methods for initializing analysis values</li>
+          <li>!181: Improve exception messages when exceeding classfile
+          limits</li>
+          <li>!182: Minor Javadoc improvements</li>
+        </ul>
+      </li>
+      <li>bug fixes
+        <ul>
+          <li>317609: Enhance ClassWriter to take a class loader for use with
+          getCommonSuperClass</li>
+          <li>317833: When ClassWriter copies constant pool of class reader,
+          ClassWriter.COMPUTE_MAX does not consider changes in argument
+          sizes</li>
+          <li>317835: COMPUTE_MAX_STACK_AND_LOCAL_FROM_FRAMES does not handle
+          LONG and DOUBLE types correctly</li>
+          <li>317837: Apparent regression in GeneratorAdapter.java `cast`
+          function</li>
+          <li>317843: Bug in CheckMethodAdapter</li>
+        </ul>
+      </li>
+    </ul>
     <h3 id="6.2">24 May 2018: ASM 6.2 (tag ASM_6_2)</h3>
     <ul>
       <li>experimental support for the upcoming JDK 11 features (nest mates and

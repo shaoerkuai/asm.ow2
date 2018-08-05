@@ -4,7 +4,7 @@ task javadoc(type: Javadoc) {
   ['asm', 'asm-analysis', 'asm-commons', 'asm-tree', 'asm-util'].each { pkg ->
     source(fileTree("external/${pkg}/src/main/java").include('**/*.java'))
   }
-  title = 'ASM 6.1.1'
+  title = 'ASM 6.2.1'
   destinationDir = new File('public/javadoc')
 }
 
