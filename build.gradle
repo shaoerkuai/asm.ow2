@@ -1,26 +1,44 @@
 description = 'Website of the ASM project'
 
-task javadoc(type: Javadoc) {
+repositories { mavenCentral() }
+
+apply plugin: 'java'
+
+dependencies { 
+  compile 'org.apache.commons:commons-csv:1.5'
+  compile 'org.freemarker:freemarker:2.3.28' 
+}
+
+task javadoc(type: Javadoc, overwrite: true) {
   ['asm', 'asm-analysis', 'asm-commons', 'asm-tree', 'asm-util'].each { pkg ->
     source(fileTree("external/${pkg}/src/main/java").include('**/*.java'))
   }
   title = 'ASM 6.2.1'
-  destinationDir = new File('public/javadoc')
+  destinationDir = file('build/public/javadoc')
 }
 
-task build(type: Copy, dependsOn: 'javadoc') {
+task runBenchmark(type: GradleBuild) {
+  dir 'external'
+  startParameter.setTaskNames(['benchmarks:jmh'])
+}
+
+// Manual task to run the benchmarks and to regenerate the performance.html page
+// from the results (takes ~45m).
+task benchmark(type: JavaExec, dependsOn: 'runBenchmark') {
+  classpath sourceSets.main.runtimeClasspath
+  main 'ResultProcessor'
+  args 'external/benchmarks/build/reports/jmh/results.csv'
+  args 'src/main/html/performance.html'
+}
+
+task publish(type: Copy, dependsOn: 'javadoc') {
   inputs.files('src/main/html/header.inc')
-  def header = new File('src/main/html/header.inc').text
+  def header = file('src/main/html/header.inc').text
   from('src/main/html') {
     exclude '*.inc'
     filter({line -> line.replace('<!--header-->', header)})
   }
   from 'src/main/images'
   from 'src/main/objects'
-  into 'public'
-}
-
-task clean(type: Delete) {
-  delete 'build'
-  delete 'public'
+  into 'build/public'
 }

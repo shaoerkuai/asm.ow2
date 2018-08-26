@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASM - Performance</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    .chart {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .chart p {
+      margin: 0;
+    }
+
+    .chart .caption {
+      float: right;
+    }
+
+    .chart ul {
+      padding: 0;
+      margin: 0;
+      background-color: rgb(250, 250, 250);
+      list-style-type: none;
+    }
+
+    .chart li {
+      position: relative;
+      width: 100%;
+      height: 1.5em;
+      margin: 4px 0;
+    }
+
+    .chart li span {
+      display: flex;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0 2px;
+      align-items: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .chart li span:nth-child(1) {
+      padding: 0;
+      background-color: rgb(0, 158, 255);
+    }
+
+    .chart li span:nth-child(2) {
+      top: 25%;
+      bottom: 25%;
+      padding: 0;
+      border-left: 1px solid rgb(51, 51, 51);
+      border-right: 1px solid rgb(51, 51, 51);
+    }
+
+    .chart li span:nth-child(2)::before {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      right: 0;
+      bottom: 50%;
+      border-top: 1px solid rgb(51, 51, 51);
+      content: '';
+    }
+  </style>
+</head>
+<body>
+  <!--header-->
+  <div class="page-content">
+    <h1>ASM Performance Benchmarks</h1>
+    <p>Each chart shows either the number of "operations" per second that can be
+    performed by several versions of ASM and other libraries (the larger the
+    better), or the number of memory bytes used by one operation (the smaller
+    the better). The definition of an "operation" depends on the benchmark, and
+    is given below for each benchmark. The "few dozen classes" mentioned below
+    are the same for all benchmarks.</p>
+    <p>This page is generated automatically from the results of the
+    <a href="http://openjdk.java.net/projects/code-tools/jmh/">JMH</a> ASM
+    benchmarks.</p>
+          <h2 id="AdapterBenchmark.getClassInfo">AdapterBenchmark.getClassInfo</h2>
+      <p>
+          One operation = create a ClassReader and call getAccess(),
+          getClassName(), getSuperName(), and getInterfaces() on it, for a few 
+          dozen classes.
+      </p>
+      <div class="chart">
+        <p>0 <span class="caption">20000 ops/s</span></p>       
+        <ul>
+            <li>
+              <span style="right:27.068%;">
+                &nbsp;asm4_0
+              </span>
+              <span style="left:71.647%;
+                           right:25.783%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:41.944%;">
+                &nbsp;asm5_0
+              </span>
+              <span style="left:57.21%;
+                           right:41.099%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:42.123%;">
+                &nbsp;asm6_0
+              </span>
+              <span style="left:56.835%;
+                           right:41.081%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:31.274%;">
+                &nbsp;asm6_1
+              </span>
+              <span style="left:67.502%;
+                           right:30.05%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:38.628%;">
+                &nbsp;asm6_2
+              </span>
+              <span style="left:60.389%;
+                           right:37.645%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:38.565%;">
+                &nbsp;asmCurrent
+              </span>
+              <span style="left:60.489%;
+                           right:37.62%;">
+              </span>
+            </li>
+        </ul>
+      </div>
+      <h2 id="AdapterBenchmark.getClassObjectModel">AdapterBenchmark.getClassObjectModel</h2>
+      <p>
+          One operation = create a ClassReader and a ClassNode from it, for a
+          few dozen classes.
+      </p>
+      <div class="chart">
+        <p>0 <span class="caption">1000 ops/s</span></p>       
+        <ul>
+            <li>
+              <span style="right:51.455%;">
+                &nbsp;asm4_0
+              </span>
+              <span style="left:47.757%;
+                           right:50.666%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:49.357%;">
+                &nbsp;asm5_0
+              </span>
+              <span style="left:49.933%;
+                           right:48.646%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:50.016%;">
+                &nbsp;asm6_0
+              </span>
+              <span style="left:49.31%;
+                           right:49.342%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:48.268%;">
+                &nbsp;asm6_1
+              </span>
+              <span style="left:50.993%;
+                           right:47.529%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:50%;">
+                &nbsp;asm6_2
+              </span>
+              <span style="left:49.208%;
+                           right:49.208%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:49.968%;">
+                &nbsp;asmCurrent
+              </span>
+              <span style="left:49.298%;
+                           right:49.233%;">
+              </span>
+            </li>
+        </ul>
+      </div>
+      <h2 id="AdapterBenchmark.readAndWriteWithComputeFrames">AdapterBenchmark.readAndWriteWithComputeFrames</h2>
+      <p>
+          One operation = create a ClassReader and make a ClassWriter with the
+          COMPUTE_FRAMES option visit and serialize it, for a few dozen
+          classes.
+      </p>
+      <div class="chart">
+        <p>0 <span class="caption">200 ops/s</span></p>       
+        <ul>
+            <li>
+              <span style="right:21.859%;">
+                &nbsp;asm4_0
+              </span>
+              <span style="left:77.038%;
+                           right:20.755%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:21.546%;">
+                &nbsp;asm5_0
+              </span>
+              <span style="left:77.426%;
+                           right:20.519%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:23.656%;">
+                &nbsp;asm6_0
+              </span>
+              <span style="left:75.228%;
+                           right:22.54%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:18.694%;">
+                &nbsp;asm6_1
+              </span>
+              <span style="left:80.203%;
+                           right:17.591%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:18.448%;">
+                &nbsp;asm6_2
+              </span>
+              <span style="left:80.438%;
+                           right:17.335%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:18.55%;">
+                &nbsp;asmCurrent
+              </span>
+              <span style="left:80.303%;
+                           right:17.402%;">
+              </span>
+            </li>
+        </ul>
+      </div>
+      <h2 id="AdapterBenchmark.readAndWriteWithComputeMaxs">AdapterBenchmark.readAndWriteWithComputeMaxs</h2>
+      <p>
+          One operation = create a ClassReader and make a ClassWriter with the
+          COMPUTE_MAXS option visit and serialize it (or the equivalent for the
+          other libraries), for a few dozen classes.
+      </p>
+      <div class="chart">
+        <p>0 <span class="caption">500 ops/s</span></p>       
+        <ul>
+            <li>
+              <span style="right:49.035%;">
+                &nbsp;asm4_0
+              </span>
+              <span style="left:50.136%;
+                           right:48.205%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:46.444%;">
+                &nbsp;asm5_0
+              </span>
+              <span style="left:52.789%;
+                           right:45.678%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:46.753%;">
+                &nbsp;asm6_0
+              </span>
+              <span style="left:52.501%;
+                           right:46.007%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:45.544%;">
+                &nbsp;asm6_1
+              </span>
+              <span style="left:53.693%;
+                           right:44.78%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:47.395%;">
+                &nbsp;asm6_2
+              </span>
+              <span style="left:51.811%;
+                           right:46.601%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:46.532%;">
+                &nbsp;asmCurrent
+              </span>
+              <span style="left:52.686%;
+                           right:45.751%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:84.728%;">
+                &nbsp;aspectJBcel
+              </span>
+              <span style="left:15.045%;
+                           right:84.5%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:87.612%;">
+                &nbsp;bcel
+              </span>
+              <span style="left:12.214%;
+                           right:87.438%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:93.7%;">
+                &nbsp;serp
+              </span>
+              <span style="left:6.205%;
+                           right:93.606%;">
+              </span>
+            </li>
+        </ul>
+      </div>
+      <h2 id="AdapterBenchmark.readAndWriteWithCopyPool">AdapterBenchmark.readAndWriteWithCopyPool</h2>
+      <p>
+          One operation = create a ClassReader and make a ClassWriter with the
+          "copy constant pool" optimization visit and serialize it, for a few
+          dozen classes.
+      </p>
+      <div class="chart">
+        <p>0 <span class="caption">2000 ops/s</span></p>       
+        <ul>
+            <li>
+              <span style="right:48.21%;">
+                &nbsp;asm4_0
+              </span>
+              <span style="left:51.017%;
+                           right:47.436%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:46.67%;">
+                &nbsp;asm5_0
+              </span>
+              <span style="left:52.598%;
+                           right:45.939%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:46.91%;">
+                &nbsp;asm6_0
+              </span>
+              <span style="left:52.301%;
+                           right:46.12%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:42.647%;">
+                &nbsp;asm6_1
+              </span>
+              <span style="left:56.469%;
+                           right:41.764%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:45.12%;">
+                &nbsp;asm6_2
+              </span>
+              <span style="left:54.058%;
+                           right:44.298%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:45.511%;">
+                &nbsp;asmCurrent
+              </span>
+              <span style="left:53.757%;
+                           right:44.778%;">
+              </span>
+            </li>
+        </ul>
+      </div>
+      <h2 id="AdapterBenchmark.readAndWriteWithObjectModel">AdapterBenchmark.readAndWriteWithObjectModel</h2>
+      <p>
+          One operation = create a ClassReader and make a ClassWriter visit and
+          serialize it, via a ClassNode, for a few dozen classes.
+      </p>
+      <div class="chart">
+        <p>0 <span class="caption">500 ops/s</span></p>       
+        <ul>
+            <li>
+              <span style="right:53.872%;">
+                &nbsp;asm4_0
+              </span>
+              <span style="left:45.417%;
+                           right:53.16%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:53.075%;">
+                &nbsp;asm5_0
+              </span>
+              <span style="left:46.251%;
+                           right:52.401%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:53.594%;">
+                &nbsp;asm6_0
+              </span>
+              <span style="left:45.714%;
+                           right:52.902%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:51.822%;">
+                &nbsp;asm6_1
+              </span>
+              <span style="left:47.41%;
+                           right:51.053%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:52.56%;">
+                &nbsp;asm6_2
+              </span>
+              <span style="left:46.737%;
+                           right:51.856%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:52.104%;">
+                &nbsp;asmCurrent
+              </span>
+              <span style="left:47.253%;
+                           right:51.461%;">
+              </span>
+            </li>
+        </ul>
+      </div>
+      <h2 id="AdapterBenchmark.readAndWrite">AdapterBenchmark.readAndWrite</h2>
+      <p>
+          One operation = create a ClassReader and make a ClassWriter visit and
+          serialize it (or the equivalent for the other libraries), for a few
+          dozen classes.
+      </p>
+      <div class="chart">
+        <p>0 <span class="caption">1000 ops/s</span></p>       
+        <ul>
+            <li>
+              <span style="right:71.698%;">
+                &nbsp;asm4_0
+              </span>
+              <span style="left:27.914%;
+                           right:71.309%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:71.383%;">
+                &nbsp;asm5_0
+              </span>
+              <span style="left:28.201%;
+                           right:70.967%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:70.736%;">
+                &nbsp;asm6_0
+              </span>
+              <span style="left:28.887%;
+                           right:70.359%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:70.788%;">
+                &nbsp;asm6_1
+              </span>
+              <span style="left:28.726%;
+                           right:70.302%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:70.954%;">
+                &nbsp;asm6_2
+              </span>
+              <span style="left:28.607%;
+                           right:70.515%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:71.217%;">
+                &nbsp;asmCurrent
+              </span>
+              <span style="left:28.373%;
+                           right:70.807%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:90.407%;">
+                &nbsp;aspectJBcel
+              </span>
+              <span style="left:9.455%;
+                           right:90.27%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:92.554%;">
+                &nbsp;bcel
+              </span>
+              <span style="left:7.341%;
+                           right:92.45%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:49.757%;">
+                &nbsp;javassist
+              </span>
+              <span style="left:49.565%;
+                           right:49.079%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:96.553%;">
+                &nbsp;serp
+              </span>
+              <span style="left:3.397%;
+                           right:96.503%;">
+              </span>
+            </li>
+        </ul>
+      </div>
+      <h2 id="AdapterBenchmark.read">AdapterBenchmark.read</h2>
+      <p>
+          One operation = create a ClassReader and make an empty visitor visit
+          it, for a few dozen classes.
+      </p>
+      <div class="chart">
+        <p>0 <span class="caption">1000 ops/s</span></p>       
+        <ul>
+            <li>
+              <span style="right:42.052%;">
+                &nbsp;asm4_0
+              </span>
+              <span style="left:57.144%;
+                           right:41.249%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:35.204%;">
+                &nbsp;asm5_0
+              </span>
+              <span style="left:63.851%;
+                           right:34.258%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:36.954%;">
+                &nbsp;asm6_0
+              </span>
+              <span style="left:62.082%;
+                           right:35.99%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:35.612%;">
+                &nbsp;asm6_1
+              </span>
+              <span style="left:63.491%;
+                           right:34.714%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:39.152%;">
+                &nbsp;asm6_2
+              </span>
+              <span style="left:59.936%;
+                           right:38.24%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:39.27%;">
+                &nbsp;asmCurrent
+              </span>
+              <span style="left:59.858%;
+                           right:38.398%;">
+              </span>
+            </li>
+        </ul>
+      </div>
+      <h2 id="GeneratorBenchmark">GeneratorBenchmark</h2>
+      <p>
+          One operation = generate a HelloWorld class in byte array form.
+      </p>
+      <div class="chart">
+        <p>0 <span class="caption">1000000 ops/s</span></p>       
+        <ul>
+            <li>
+              <span style="right:28.308%;">
+                &nbsp;asm4_0
+              </span>
+              <span style="left:70.629%;
+                           right:27.244%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:31.846%;">
+                &nbsp;asm5_0
+              </span>
+              <span style="left:67.257%;
+                           right:30.95%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:31.927%;">
+                &nbsp;asm6_0
+              </span>
+              <span style="left:67.128%;
+                           right:30.981%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:17.948%;">
+                &nbsp;asm6_1
+              </span>
+              <span style="left:80.597%;
+                           right:16.493%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:19.028%;">
+                &nbsp;asm6_2
+              </span>
+              <span style="left:79.723%;
+                           right:17.778%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:18.904%;">
+                &nbsp;asmCurrent
+              </span>
+              <span style="left:79.898%;
+                           right:17.706%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:73.414%;">
+                &nbsp;aspectJBcel
+              </span>
+              <span style="left:26.178%;
+                           right:73.006%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:80.865%;">
+                &nbsp;bcel
+              </span>
+              <span style="left:18.84%;
+                           right:80.57%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:81.378%;">
+                &nbsp;cojen
+              </span>
+              <span style="left:18.343%;
+                           right:81.099%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:68.908%;">
+                &nbsp;csgBytecode
+              </span>
+              <span style="left:30.648%;
+                           right:68.464%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:76.812%;">
+                &nbsp;gnuByteCode
+              </span>
+              <span style="left:22.775%;
+                           right:76.398%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:72.489%;">
+                &nbsp;jclassLib
+              </span>
+              <span style="left:27.089%;
+                           right:72.068%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:92.187%;">
+                &nbsp;jiapi
+              </span>
+              <span style="left:7.695%;
+                           right:92.069%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:70.577%;">
+                &nbsp;mozillaClassFile
+              </span>
+              <span style="left:28.984%;
+                           right:70.137%;">
+              </span>
+            </li>
+        </ul>
+      </div>
+      <h2 id="MemoryBenchmark.newClassNode">MemoryBenchmark.newClassNode</h2>
+      <p>
+          One operation = create, populate and store a ClassNode for a few dozen
+          classes.
+      </p>
+      <div class="chart">
+        <p>0 <span class="caption">5 MB</span></p>       
+        <ul>
+            <li>
+              <span style="right:44.545%;">
+                &nbsp;asm4_0
+              </span>
+              <span style="left:55.454%;
+                           right:44.544%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:46.63%;">
+                &nbsp;asm5_0
+              </span>
+              <span style="left:53.363%;
+                           right:46.623%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:46.715%;">
+                &nbsp;asm6_0
+              </span>
+              <span style="left:53.282%;
+                           right:46.713%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:46.679%;">
+                &nbsp;asm6_1
+              </span>
+              <span style="left:53.32%;
+                           right:46.677%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:46.68%;">
+                &nbsp;asm6_2
+              </span>
+              <span style="left:53.317%;
+                           right:46.677%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:46.682%;">
+                &nbsp;asmCurrent
+              </span>
+              <span style="left:53.301%;
+                           right:46.666%;">
+              </span>
+            </li>
+        </ul>
+      </div>
+      <h2 id="MemoryBenchmark.newClass">MemoryBenchmark.newClass</h2>
+      <p>
+          One operation = create, populate and store a ClassWriter for a few
+          dozen classes.
+      </p>
+      <div class="chart">
+        <p>0 <span class="caption">2 MB</span></p>       
+        <ul>
+            <li>
+              <span style="right:8.615%;">
+                &nbsp;asm4_0
+              </span>
+              <span style="left:90.45%;
+                           right:7.679%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:7.285%;">
+                &nbsp;asm5_0
+              </span>
+              <span style="left:92.697%;
+                           right:7.267%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:7.256%;">
+                &nbsp;asm6_0
+              </span>
+              <span style="left:92.734%;
+                           right:7.246%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:7.662%;">
+                &nbsp;asm6_1
+              </span>
+              <span style="left:90.964%;
+                           right:6.288%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:7.445%;">
+                &nbsp;asm6_2
+              </span>
+              <span style="left:92.54%;
+                           right:7.431%;">
+              </span>
+            </li>
+            <li>
+              <span style="right:7.603%;">
+                &nbsp;asmCurrent
+              </span>
+              <span style="left:91.004%;
+                           right:6.21%;">
+              </span>
+            </li>
+        </ul>
+      </div>
+  </div>
+</body>
+</html>

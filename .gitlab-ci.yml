@@ -1,4 +1,4 @@
-image: gradle:4.6-jdk8-alpine
+image: gradle:4.9-jdk8-alpine
 
 variables:
   # Set the location of the dependency cache to a local directory, so that it
@@ -14,10 +14,10 @@ cache:
 pages:
   stage: deploy
   script:
-    - gradle build
+    - gradle publish
   artifacts:
     paths:
-      - public
+      - build/public
   only:
     - master
 
