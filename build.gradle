@@ -40,5 +40,9 @@ task publish(type: Copy, dependsOn: 'javadoc') {
   }
   from 'src/main/images'
   from 'src/main/objects'
-  into 'build/public'
+  into 'public'
+}
+
+clean.doFirst {
+  delete 'public'
 }
