@@ -14,7 +14,7 @@ task javadoc(type: Javadoc, overwrite: true) {
     source(fileTree("external/${pkg}/src/main/java").include('**/*.java'))
   }
   title = 'ASM 6.2.1'
-  destinationDir = file('build/public/javadoc')
+  destinationDir = file('public/javadoc')
 }
 
 task runBenchmark(type: GradleBuild) {
