@@ -11,6 +11,37 @@
   <div class="page-content">
     <h1>Versions</h1>
     <!-- Update news.xml and index.html when adding a new version! -->
+    <h3 id="7.0beta">29 September 2018: ASM 7.0 beta (tag ASM_7_0_BETA)</h3>
+    <ul>
+      <li>support of JDK 11 features now official (was experimental)</li>
+      <li>xml package deleted (was deprecated since 6.1)</li>
+      <li>small improvements
+        <ul>
+          <li>Type and TypePath now explicitly final</li>
+          <li>Eliminate double-spaced output from Textifier</li>
+          <li>Remap inner class names in Remapper</li>
+          <li>Better UnsupportedOperationException messages</li>
+          <li>Javadoc improvements</li>
+          <li>Check code quality with Checkstyle and PMD</li>
+          <li>Fix performance regression introduced in 6.2</li>
+        </ul>
+      </li>
+      <li>bug fixes
+        <ul>
+          <li>317847: Gradle build missing Implementation-Version property</li>
+          <li>317848: Type names no longer included in declaration comments
+          produced by Textifier</li>
+          <li>317851: Analyzer gets StackOverflowError when method has lots of
+          jumps</li>
+          <li>317853: SimpleVerifier merges types incorrectly when one type is
+          an interface</li>
+          <li>317856: Bug in AdviceAdapter with superclass constructors</li>
+          <li>MethodWriter generates incorrect bytecode for long or double
+          ConstantDynamic</li>
+          <li>Remapper does not remap ConstantDynamic and Handle correctly</li>
+        </ul>
+      </li>
+    </ul>
     <h3 id="6.2.1">5 August 2018: ASM 6.2.1 (tag ASM_6_2_1)</h3>
     <ul>
       <li>small improvements
