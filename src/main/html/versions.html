@@ -11,6 +11,37 @@
   <div class="page-content">
     <h1>Versions</h1>
     <!-- Update news.xml and index.html when adding a new version! -->
+    <h3 id="7.1">3 March 2019: ASM 7.1 (tag ASM_7_1)</h3>
+    <ul>
+      <li>new constant Opcodes.V13 for Java 13</li>
+      <li>small optimizations in asm.Type</li>
+      <li>check signatures in CheckMethodAdapter.visitLocalVariable</li>
+      <li>refactor unit tests to use Arrange-Act-Assert pattern</li>
+      <li>deprecations
+        <ul>
+          <li>deprecate ClassReader.b</li>
+          <li>deprecate ASMifiable and Textifiable (replaced with
+          ASMifierSupport and TextifierSupport)</li>
+          <li>move deprecated Remapping*Adapter classes to new
+          asm-deprecated.jar</li>
+          <li>delete asm.util.Printer buf and appendString (were previously
+          deprecated)</li>
+        </ul>
+      </li>
+      <li>bug fixes
+        <ul>
+          <li>317863: Remapper logic for InnerClasses attribute is wrong for
+          method-local Java classes</li>
+          <li>317866: Expanded frames result in incorrect types for primitive
+          arrays of more than seven dimensions</li>
+          <li>317868: IllegalArgumentException at
+          Frame.getAbstractTypeFromDescriptor on class name with
+          parentheses</li>
+          <li>317869: CheckClassAdapter requires non-null ClassVisitor that
+          returns non-null MethodVisitor</li>
+        </ul>
+      </li>
+    </ul>
     <h3 id="7.0">27 October 2018: ASM 7.0 (tag ASM_7_0)</h3>
     <ul>
       <li>rollback of !177: Ensure instructions belong only to one list</li>

@@ -3,6 +3,11 @@
 <channel>
   <title>ASM Releases</title>
   <item>
+    <title>ASM 7.1 released</title>
+    <link>http://asm.ow2.io/versions.html#7.1</link>
+    <pubDate>3 Mar 2019 12:00 UT</pubDate>
+  </item>
+  <item>
     <title>ASM 7.0 released</title>
     <link>http://asm.ow2.io/versions.html#7.0</link>
     <pubDate>27 October 2018 12:00 UT</pubDate>
