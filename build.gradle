@@ -23,7 +23,7 @@ task runBenchmark(type: GradleBuild) {
 }
 
 // Manual task to run the benchmarks and to regenerate the performance.html page
-// from the results (takes ~45m).
+// from the results (takes ~55m).
 task benchmark(type: JavaExec, dependsOn: 'runBenchmark') {
   classpath sourceSets.main.runtimeClasspath
   main 'ResultProcessor'

@@ -125,6 +125,26 @@
           One operation = create a ClassReader and make an empty visitor visit
           it, for a few dozen classes.
           <#break>
+        <#case "AdapterBenchmarkJava8.getClassInfo">
+          One operation = create a ClassReader and call getAccess(),
+          getClassName(), getSuperName(), and getInterfaces() on it, for 36
+          classes using Java 8 features (including invokedynamic instructions).
+          <#break>
+        <#case "AdapterBenchmarkJava8.readAndWriteWithCopyPool">
+          One operation = create a ClassReader and make a ClassWriter with the
+          "copy constant pool" optimization visit and serialize it, for  36
+          classes using Java 8 features (including invokedynamic instructions).
+          <#break>
+        <#case "AdapterBenchmarkJava8.readAndWrite">
+          One operation = create a ClassReader and make a ClassWriter visit and
+          serialize it (or the equivalent for the other libraries), for  36
+          classes using Java 8 features (including invokedynamic instructions).
+          <#break>
+        <#case "AdapterBenchmarkJava8.read">
+          One operation = create a ClassReader and make an empty visitor visit
+          it, for 36 classes using Java 8 features (including invokedynamic
+          instructions).
+          <#break>
         <#case "GeneratorBenchmark">
           One operation = generate a HelloWorld class in byte array form.
           <#break>
