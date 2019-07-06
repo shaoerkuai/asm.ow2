@@ -11,6 +11,20 @@
   <div class="page-content">
     <h1>Versions</h1>
     <!-- Update news.xml and index.html when adding a new version! -->
+    <h3 id="7.2beta">6 July 2019: ASM 7.2 beta (tag ASM_7_2_BETA)</h3>
+    <ul>
+      <li>add support for Java 14</li>
+      <li>fix missing 'final' on some ClassWriter methods</li>
+      <li>ASMifiable and Textifiable moved to asm-deprecated.jar</li>
+      <li>small refactors to reduce code duplication</li>
+      <li>delete unused code and constants</li>
+      <li>bug fixes
+        <ul>
+          <li>317873: Add support for RET instruction in AdviceAdapter</li>
+          <li>317872: Throw an exception if visitFrame used incorrectly</li>
+        </ul>
+      </li>
+    </ul>
     <h3 id="7.1">3 March 2019: ASM 7.1 (tag ASM_7_1)</h3>
     <ul>
       <li>new constant Opcodes.V13 for Java 13</li>
