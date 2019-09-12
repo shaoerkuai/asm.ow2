@@ -34,9 +34,11 @@ task benchmark(type: JavaExec, dependsOn: 'runBenchmark') {
 task publish(type: Copy, dependsOn: 'javadoc') {
   inputs.files('src/main/html/header.inc')
   def header = file('src/main/html/header.inc').text
+  def license = file('src/main/objects/LICENSE.txt').text
   from('src/main/html') {
     exclude '*.inc'
     filter({line -> line.replace('<!--header-->', header)})
+    filter({line -> line.replace('<!--license-->', "<pre>${license}</pre>")})
   }
   from 'src/main/images'
   from 'src/main/objects'
