@@ -3,6 +3,11 @@
 <channel>
   <title>ASM Releases</title>
   <item>
+    <title>ASM 7.2 released</title>
+    <link>http://asm.ow2.io/versions.html#7.2</link>
+    <pubDate>29 September 2019 12:00 UT</pubDate>
+  </item>
+  <item>
     <title>ASM 7.2 beta released</title>
     <link>http://asm.ow2.io/versions.html#7.2beta</link>
     <pubDate>6 July 2019 12:00 UT</pubDate>
@@ -17,7 +22,7 @@
     <link>http://asm.ow2.io/versions.html#7.0</link>
     <pubDate>27 October 2018 12:00 UT</pubDate>
   </item>
-  <item>
+  <!--item>
     <title>ASM 7.0 beta released</title>
     <link>http://asm.ow2.io/versions.html#7.0beta</link>
     <pubDate>29 September 2018 12:00 UT</pubDate>
@@ -27,7 +32,7 @@
     <link>http://asm.ow2.io/versions.html#6.2.1</link>
     <pubDate>5 August 2018 12:00 UT</pubDate>
   </item>
-  <!--item>
+  <item>
     <title>ASM 6.2 released</title>
     <link>http://asm.ow2.io/versions.html#6.2</link>
     <pubDate>24 May 2018 12:00 UT</pubDate>
