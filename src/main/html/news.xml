@@ -3,6 +3,11 @@
 <channel>
   <title>ASM Releases</title>
   <item>
+    <title>ASM 8.0 released</title>
+    <link>http://asm.ow2.io/versions.html#8.0</link>
+    <pubDate>28 March 2020 12:00 UT</pubDate>
+  </item>
+  <item>
     <title>ASM 7.3.1 released</title>
     <link>http://asm.ow2.io/versions.html#7.3.1</link>
     <pubDate>11 January 2020 12:00 UT</pubDate>
@@ -17,12 +22,12 @@
     <link>http://asm.ow2.io/versions.html#7.2beta</link>
     <pubDate>6 July 2019 12:00 UT</pubDate>
   </item>
-  <item>
+  <!--item>
     <title>ASM 7.1 released</title>
     <link>http://asm.ow2.io/versions.html#7.1</link>
     <pubDate>3 Mar 2019 12:00 UT</pubDate>
   </item>
-  <!--item>
+  <item>
     <title>ASM 7.0 released</title>
     <link>http://asm.ow2.io/versions.html#7.0</link>
     <pubDate>27 October 2018 12:00 UT</pubDate>
