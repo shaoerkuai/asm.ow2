@@ -3,6 +3,11 @@
 <channel>
   <title>ASM Releases</title>
   <item>
+    <title>ASM 9.0 released</title>
+    <link>http://asm.ow2.io/versions.html#9.0</link>
+    <pubDate>22 September 2020 12:00 UT</pubDate>
+  </item>
+  <item>
     <title>ASM 9.0 beta released</title>
     <link>http://asm.ow2.io/versions.html#9.0beta</link>
     <pubDate>14 July 2020 12:00 UT</pubDate>
