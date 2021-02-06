@@ -11,6 +11,29 @@
   <div class="page-content">
     <h1>Versions</h1>
     <!-- Update news.xml and index.html when adding a new version! -->
+    <h3 id="9.1">6 February 2021: ASM 9.1 (tag ASM_9_1)</h3>
+    <ul>
+      <li>JDK 17 support</li>
+      <li>Add some input validations in ClassReader</li>
+      <li>Replace -debug flag in Printer with -nodebug (-debug continues to
+      work)</li>
+      <li>bug fixes
+        <ul>
+          <li>317921: Make Analyzer not require correct maxs or calculate maxs
+          fast</li>
+          <li>317922: InstructionAdapter shall throw consistent exceptions</li>
+          <li>317923: Incorrect documentation on ClassReader's use of
+          AnnotationVisitor</li>
+          <li>317929: ClassRemapper doesn't remap annotation values</li>
+          <li>317930: Can CheckClassAdapter.checkTypeRef throw a more specific
+          exception?</li>
+          <li>317931: Shall CheckMethodAdapter.Method.visitLabel throw
+          IllegalStateException?</li>
+          <li>Tests that requires preview features should only run if the
+          preview features of the right JDK are enabled</li>
+        </ul>
+      </li>
+    </ul>
     <h3 id="9.0">22 September 2020: ASM 9.0 (tag ASM_9_0)</h3>
     <ul>
       <li>bug fixes
