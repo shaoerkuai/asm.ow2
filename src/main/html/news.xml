@@ -3,11 +3,16 @@
 <channel>
   <title>ASM Releases</title>
   <item>
+    <title>ASM 9.3 released</title>
+    <link>http://asm.ow2.io/versions.html#9.3</link>
+    <pubDate>4 April 2022 12:00 UT</pubDate>
+  </item>
+  <item>
     <title>ASM 9.2 released</title>
     <link>http://asm.ow2.io/versions.html#9.2</link>
     <pubDate>26 June 2021 12:00 UT</pubDate>
   </item>
-  <item>
+  <!--item>
     <title>ASM 9.1 released</title>
     <link>http://asm.ow2.io/versions.html#9.1</link>
     <pubDate>6 February 2021 12:00 UT</pubDate>
@@ -22,7 +27,7 @@
     <link>http://asm.ow2.io/versions.html#9.0beta</link>
     <pubDate>14 July 2020 12:00 UT</pubDate>
   </item>
-  <!--item>
+  <item>
     <title>ASM 8.0.1 released</title>
     <link>http://asm.ow2.io/versions.html#8.0.1</link>
     <pubDate>3 April 2020 12:00 UT</pubDate>
