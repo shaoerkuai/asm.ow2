@@ -11,6 +11,25 @@
   <div class="page-content">
     <h1>Versions</h1>
     <!-- Update news.xml and index.html when adding a new version! -->
+    <h3 id="9.4">2 October 2022: ASM 9.4 (tag ASM_9_4)</h3>
+    <ul>   
+      <li>new Opcodes.V20 constant for Java 20</li>
+      <li>more checks in CheckClassAdapter</li>
+      <li>Javadoc improvements and fixes</li>
+      <li>module-info classes can be built without Gradle and Bnd</li>
+      <li>parent POM updated to org.ow2:ow2:1.5.1</li>
+      <li>bug fixes
+        <ul>
+          <li>317977: CheckClassAdapter is no longer transparent for
+          MAXLOCALS</li>
+          <li>317981: Add public getDelegate method to all visitor classes</li>
+          <li>Analyzer does not compute optimal maxLocals for static
+          methods</li>
+          <li>Fix SignatureWriter when a generic type has a depth over 30</li>
+          <li>Skip remap inner class name if not changed in Remapper</li>
+        </ul>
+      </li>
+    </ul>
     <h3 id="9.3">4 April 2022: ASM 9.3 (tag ASM_9_3)</h3>
     <ul>   
       <li>new Opcodes.V19 constant for Java 19</li>
