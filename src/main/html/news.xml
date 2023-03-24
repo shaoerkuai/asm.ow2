@@ -6,6 +6,12 @@
   <link>https://asm.ow2.io/</link>
   <atom:link href="https://asm.ow2.io/news.xml" rel="self" type="application/rss+xml" />
   <item>
+    <title>ASM 9.5 released</title>
+    <link>http://asm.ow2.io/versions.html#9.5</link>
+    <guid>http://asm.ow2.io/versions.html#9.5</guid>
+    <pubDate>Fri, 24 Mar 2023 12:00 UT</pubDate>
+  </item>
+  <item>
     <title>ASM 9.4 released</title>
     <link>http://asm.ow2.io/versions.html#9.4</link>
     <guid>http://asm.ow2.io/versions.html#9.4</guid>

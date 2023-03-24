@@ -13,7 +13,7 @@ task javadoc(type: Javadoc, overwrite: true) {
   ['asm', 'asm-analysis', 'asm-commons', 'asm-tree', 'asm-util'].each { pkg ->
     source(fileTree("external/${pkg}/src/main/java").include('**/*.java'))
   }
-  title = 'ASM 9.4'
+  title = 'ASM 9.5'
   destinationDir = file('public/javadoc')
 }
 
